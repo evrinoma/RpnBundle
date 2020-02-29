@@ -1,0 +1,20 @@
+services:
+  evrinoma.command.calc:
+    class: Evrinoma\RpnBundle\Command\CalcCommand
+    arguments: [ '@evrinoma.prn.calc' ]
+    tags:
+      - { name: console.command , command: 'evrinoma:calc' }
+
+  evrinoma.prn.calc:
+    class: Evrinoma\RpnBundle\Calc\RpnCalc
+    arguments: [ '@evrinoma.argument.factory' ]
+
+  evrinoma.argument.factory:
+    class: Evrinoma\RpnBundle\Argument\ArgumentFactory
+    arguments: ['@evrinoma.operation.factory', '@evrinoma.variable.factory' ]
+
+  evrinoma.operation.factory:
+    class: Evrinoma\RpnBundle\Argument\Operation\OperationFactory
+
+  evrinoma.variable.factory:
+    class: Evrinoma\RpnBundle\Argument\Variable\VariableFactory
