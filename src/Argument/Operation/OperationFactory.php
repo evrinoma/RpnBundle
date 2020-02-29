@@ -16,7 +16,6 @@ class OperationFactory implements OperationFactoryInterface
     private $divide;
     private $leftBracket;
     private $rightBracket;
-//endregion Fields
 
 //region SECTION: Getters/Setters
     public function getOperation(string $operation): OperationInterface
