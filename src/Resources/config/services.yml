@@ -9,6 +9,10 @@ services:
     class: Evrinoma\RpnBundle\Calc\RpnCalc
     arguments: [ '@evrinoma.argument.factory' ]
 
+  Evrinoma\RpnBundle\Calc\RpnCalc:
+    alias: evrinoma.prn.calc
+    public: true
+
   evrinoma.argument.factory:
     class: Evrinoma\RpnBundle\Argument\ArgumentFactory
     arguments: ['@evrinoma.operation.factory', '@evrinoma.variable.factory' ]
