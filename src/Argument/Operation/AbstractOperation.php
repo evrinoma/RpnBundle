@@ -12,7 +12,7 @@ abstract class AbstractOperation extends AbstractArgument implements OperationIn
 
     public function operation(): string
     {
-        return self::OPERATION;
+        return static::OPERATION;
     }
 
     public function isEndGrouping(): bool
